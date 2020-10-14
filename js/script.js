@@ -64,12 +64,21 @@ function showMyDB(hidden) {
 showMyDB(personalMovieDB.privat);
 // console.dir(personalMovieDB);
 
-
-
-function writeYourgeneres(array){
-for(let i = 1; i <=3; i++){
-array.push(prompt(`${i}: Your lovely generes`));
-}
+function writeYourgeneres(array) {
+  for (let i = 1; i <= 3; i++) {
+    let genress = prompt(`${i}: Your lovely generes`);
+    if (
+      genress.length > 20 ||
+      isNaN(genress) ||
+      genress === "" ||
+      genress == null
+    ) {
+      i--;
+      console.log("Generes Error");
+    } else {
+      array.push(genress);
+    }
+  }
 }
 
 writeYourgeneres(personalMovieDB.genres);
