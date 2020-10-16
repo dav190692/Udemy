@@ -8,7 +8,7 @@ function start() {
     numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "99");
   }
 }
-start();
+// start();
 
 let personalMovieDB = {
   count: numberOfFilms,
@@ -39,7 +39,7 @@ function rememberMyFilms() {
   }
 }
 
-rememberMyFilms();
+// rememberMyFilms();
 
 function detectPersonalLevel() {
   if (personalMovieDB.count < 10) {
@@ -53,7 +53,7 @@ function detectPersonalLevel() {
   }
 }
 
-detectPersonalLevel();
+// detectPersonalLevel();
 
 function showMyDB(hidden) {
   if (!hidden) {
@@ -62,21 +62,21 @@ function showMyDB(hidden) {
 }
 
 showMyDB(personalMovieDB.privat);
-// console.dir(personalMovieDB);
 
 function writeYourgeneres(array) {
   for (let i = 1; i <= 3; i++) {
     let genress = prompt(`${i}: Your lovely generes`);
     if (
-      genress.length > 20 ||
-      isNaN(genress) ||
+      genress === null ||
+      !isNaN(genress) ||
       genress === "" ||
-      genress == null
+      genress.length > 20
     ) {
       i--;
       console.log("Generes Error");
     } else {
       array.push(genress);
+      
     }
   }
 }
