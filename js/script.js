@@ -76,7 +76,6 @@ function writeYourgeneres(array) {
       console.log("Generes Error");
     } else {
       array.push(genress);
-      
     }
   }
 }
